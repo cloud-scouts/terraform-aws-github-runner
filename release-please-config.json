@@ -5,7 +5,7 @@
       // overrides release-type for node
       "release-type": "node",
       // exclude commits from that path from processing
-      "exclude-paths": ["lambdas/libs"],
+      "exclude-paths": ["lambdas/libs"]
 
     }
   }
