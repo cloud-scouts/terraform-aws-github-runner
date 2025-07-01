@@ -6,7 +6,6 @@
       "release-type": "node",
       // exclude commits from that path from processing
       "exclude-paths": ["lambdas/libs"]
-
     }
   }
 }
