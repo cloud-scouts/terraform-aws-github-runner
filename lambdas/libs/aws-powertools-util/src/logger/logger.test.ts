@@ -1,7 +1,8 @@
 import { Context } from 'aws-lambda';
+import * as fs from 'fs';
+import * as path from 'path';
 
-import { logger, setContext } from '../';
-import { describe, test, expect, beforeEach, vi } from 'vitest';
+import { describe, test, expect, beforeEach, afterEach, vi } from 'vitest';
 
 beforeEach(() => {
   vi.clearAllMocks();
@@ -29,6 +30,31 @@ const context: Context = {
   },
 };
 
+const versionFilePath = path.resolve(__dirname, 'version.json');
+
+let logger: typeof import('../').logger;
+let setContext: typeof import('../').setContext;
+
+beforeEach(async () => {
+  // Clear the module cache and reload the logger module
+  vi.resetModules();
+  const loggerModule = await import('../');
+  logger = loggerModule.logger;
+  setContext = loggerModule.setContext;
+
+  // Ensure a clean state before each test
+  if (fs.existsSync(versionFilePath)) {
+    fs.unlinkSync(versionFilePath);
+  }
+});
+
+afterEach(() => {
+  // Clean up after each test
+  if (fs.existsSync(versionFilePath)) {
+    fs.unlinkSync(versionFilePath);
+  }
+});
+
 describe('A root logger.', () => {
   test('Should log set context.', async () => {
     setContext(context, 'unit-test');
@@ -38,6 +64,31 @@ describe('A root logger.', () => {
         'aws-request-id': context.awsRequestId,
         'function-name': context.functionName,
         module: 'unit-test',
+      }),
+    );
+  });
+});
+
+describe('Logger version handling', () => {
+  test('Should not fail if version.json does not exist', () => {
+    setContext(context, 'unit-test');
+
+    expect(logger.getPersistentLogAttributes()).toEqual(
+      expect.objectContaining({
+        version: 'unknown',
+      }),
+    );
+  });
+
+  test('Should log version if version.json exists', () => {
+    // Create a mock version.json file
+    fs.writeFileSync(versionFilePath, JSON.stringify({ version: '1.0.0' }));
+
+    setContext(context, 'unit-test');
+
+    expect(logger.getPersistentLogAttributes()).toEqual(
+      expect.objectContaining({
+        version: '1.0.0',
       }),
     );
   });
