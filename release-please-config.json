@@ -1,0 +1,12 @@
+{
+  "packages": {
+    // `.` is a special case for handling to root of the repository
+    "lambdas": {
+      // overrides release-type for node
+      "release-type": "node",
+      // exclude commits from that path from processing
+      "exclude-paths": ["lambdas/libs"],
+
+    }
+  }
+}

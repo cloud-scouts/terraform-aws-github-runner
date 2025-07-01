@@ -1,5 +1,7 @@
 import { Logger } from '@aws-lambda-powertools/logger';
 import { Context } from 'aws-lambda';
+import * as fs from 'fs';
+import * as path from 'path';
 
 const childLoggers: Logger[] = [];
 
@@ -8,10 +10,20 @@ const defaultValues = {
   environment: process.env.ENVIRONMENT || 'N/A',
 };
 
+function getReleaseVersion(): string {
+  const packageFilePath = path.resolve(__dirname, 'package.json');
+  if (fs.existsSync(packageFilePath)) {
+    const packageData = fs.readFileSync(packageFilePath, 'utf-8');
+    return JSON.parse(packageData).version || 'unknown';
+  }
+  return 'unknown';
+}
+
 function setContext(context: Context, module?: string) {
   logger.addPersistentLogAttributes({
     'aws-request-id': context.awsRequestId,
     'function-name': context.functionName,
+    version: getReleaseVersion(),
     module: module,
   });
 
@@ -20,6 +32,7 @@ function setContext(context: Context, module?: string) {
     childLogger.addPersistentLogAttributes({
       'aws-request-id': context.awsRequestId,
       'function-name': context.functionName,
+      version: getReleaseVersion(),
     });
   });
 }
