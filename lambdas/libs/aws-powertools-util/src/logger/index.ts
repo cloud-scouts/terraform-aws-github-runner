@@ -11,10 +11,10 @@ const defaultValues = {
 };
 
 function getReleaseVersion(): string {
-  const versionFilePath = path.resolve(__dirname, 'version.json');
-  if (fs.existsSync(versionFilePath)) {
-    const versionData = fs.readFileSync(versionFilePath, 'utf-8');
-    return JSON.parse(versionData).version || 'unknown';
+  const packageFilePath = path.resolve(__dirname, 'package.json');
+  if (fs.existsSync(packageFilePath)) {
+    const packageData = fs.readFileSync(packageFilePath, 'utf-8');
+    return JSON.parse(packageData).version || 'unknown';
   }
   return 'unknown';
 }
