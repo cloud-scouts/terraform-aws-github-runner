@@ -1,5 +1,5 @@
 {
-  ".": "6.6.0",
+  ".": "7.0.0",
   "lambdas/functions/ami-housekeeper": "6.6.0",
   "lambdas/functions/control-plane": "6.6.0",
   "lambdas/functions/gh-agent-syncer": "6.6.0",
