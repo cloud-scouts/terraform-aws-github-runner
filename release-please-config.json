@@ -1,29 +1,12 @@
 {
   "last-release-sha": "3a617bf19bdb3c211ef694f3fc510f8f60c79bc9",
   "release-as": "6.7.0",
-  "packages": {
-    ".": {
-      "release-type": "simple"
-    },
-    "lambdas/functions/webhook": {
-      "release-type": "node",
-      "extra-files": ["lambdas/functions/webhook/package-lock.json"]
-    },
-    "lambdas/functions/ami-housekeeper": {
-      "release-type": "node",
-      "extra-files": ["lambdas/functions/ami-housekeeper/package-lock.json"]
-    },
-    "lambdas/functions/control-plane": {
-      "release-type": "node",
-      "extra-files": ["lambdas/functions/control-plane/package-lock.json"]
-    },
-    "lambdas/functions/gh-agent-syncer": {
-      "release-type": "node",
-      "extra-files": ["lambdas/functions/gh-agent-syncer/package-lock.json"]
-    },
-    "lambdas/functions/termination-watcher": {
-      "release-type": "node",
-      "extra-files": ["lambdas/functions/termination-watcher/package-lock.json"]
-    }
-  }
+  "extra-files": [
+    "lambdas/functions/ami-housekeeper/package-lock.json",
+    "lambdas/functions/control-plane/package-lock.json",
+    "lambdas/functions/gh-agent-syncer/package-lock.json",
+    "lambdas/functions/termination-watcher/package-lock.json",
+    "lambdas/functions/webhook/package-lock.json"
+  ],
+  "release-type": "simple"
 }
