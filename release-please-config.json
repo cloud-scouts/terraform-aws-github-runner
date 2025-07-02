@@ -1,5 +1,12 @@
 {
+  "last-release-sha": "7td2b9838885b3adf52e78ddd23ac01cb819e631",
+  "release-as": "6.7.0",
   "packages": {
+    ".": {
+      // overrides release-type for node
+      "release-type": "terraform",
+      // exclude commits from that path from processing
+    },
     // `.` is a special case for handling to root of the repository
     "lambdas": {
       // overrides release-type for node

@@ -1,6 +1,6 @@
 {
   "name": "@aws-github-runner/termination-watcher",
-  "version": "1.0.0",
+  "version": "6.6.0",
   "main": "lambda.ts",
   "type": "module",
   "license": "MIT",
