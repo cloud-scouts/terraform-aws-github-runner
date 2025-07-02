@@ -1,5 +1,4 @@
 {
-  "last-release-sha": "3a617bf19bdb3c211ef694f3fc510f8f60c79bc9",
   "extra-files": [
     "lambdas/functions/ami-housekeeper/package-lock.json",
     "lambdas/functions/control-plane/package-lock.json",
