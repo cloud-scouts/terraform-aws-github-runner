@@ -1,8 +1,8 @@
 {
   ".": "6.6.0",
-  "packages/ami-housekeeper": "6.6.0",
-  "packages/control-plane": "6.6.0",
-  "packages/gh-agent-syncer": "6.6.0",
-  "packages/termination-watcher": "6.6.0",
-  "packages/webhook": "6.6.0"
+  "lambdas/functions/ami-housekeeper": "6.6.0",
+  "lambdas/functions/control-plane": "6.6.0",
+  "lambdas/functions/gh-agent-syncer": "6.6.0",
+  "lambdas/functions/termination-watcher": "6.6.0",
+  "lambdas/functions/webhook": "6.6.0"
 }

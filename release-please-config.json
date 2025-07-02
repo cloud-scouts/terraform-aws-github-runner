@@ -3,16 +3,22 @@
   "release-as": "6.7.0",
   "packages": {
     ".": {
-      // overrides release-type for node
       "release-type": "terraform",
-      // exclude commits from that path from processing
     },
-    // `.` is a special case for handling to root of the repository
-    "lambdas": {
-      // overrides release-type for node
+    "lambdas/functions/webhook": {
       "release-type": "node",
-      // exclude commits from that path from processing
-      "exclude-paths": ["lambdas/libs"]
+    },
+    "lambdas/functions/ami-housekeeper": {
+      "release-type": "node",
+    },
+    "lambdas/functions/control-plane": {
+      "release-type": "node",
+    },
+    "lambdas/functions/gh-agent-syncer": {
+      "release-type": "node",
+    },
+    "lambdas/functions/termination-watcher": {
+      "release-type": "node",
     }
   }
 }
