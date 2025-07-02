@@ -1,6 +1,6 @@
 {
   "name": "@aws-github-runner/gh-agent-syncer",
-  "version": "6.6.0",
+  "version": "6.7.0",
   "main": "lambda.ts",
   "type": "module",
   "license": "MIT",

@@ -1,6 +1,6 @@
 {
   "name": "@aws-github-runner/webhook",
-  "version": "6.6.0",
+  "version": "6.7.0",
   "main": "dist/index.js",
   "type": "module",
   "license": "MIT",
