@@ -1,5 +1,5 @@
 {
-  ".": "6.6.0",
+  ".": "7.0.0",
   "packages/ami-housekeeper": "6.6.0",
   "packages/control-plane": "6.6.0",
   "packages/gh-agent-syncer": "6.6.0",
