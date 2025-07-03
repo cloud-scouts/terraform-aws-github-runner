@@ -6,5 +6,10 @@
     "lambdas/functions/termination-watcher/package-lock.json",
     "lambdas/functions/webhook/package-lock.json"
   ],
-  "release-type": "simple"
+  "release-type": "simple",
+  "packages": {
+    ".": {
+      "release-type": "simple"
+    }
+  }
 }
