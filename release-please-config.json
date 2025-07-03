@@ -1,15 +1,14 @@
 {
-  "extra-files": [
-    "lambdas/functions/ami-housekeeper/package-lock.json",
-    "lambdas/functions/control-plane/package-lock.json",
-    "lambdas/functions/gh-agent-syncer/package-lock.json",
-    "lambdas/functions/termination-watcher/package-lock.json",
-    "lambdas/functions/webhook/package-lock.json"
-  ],
-  "release-type": "simple",
+  "release-type": "node",
   "packages": {
     ".": {
-      "release-type": "simple"
+      "extra-files": [
+        "lambdas/functions/ami-housekeeper/package-lock.json",
+        "lambdas/functions/control-plane/package-lock.json",
+        "lambdas/functions/gh-agent-syncer/package-lock.json",
+        "lambdas/functions/termination-watcher/package-lock.json",
+        "lambdas/functions/webhook/package-lock.json"
+      ]
     }
   }
 }
