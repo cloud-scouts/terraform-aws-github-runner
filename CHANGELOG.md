@@ -1,5 +1,12 @@
 # Changelog
 
+## [6.6.1](https://github.com/cloud-scouts/terraform-aws-github-runner/compare/v6.6.0...v6.6.1) (2025-07-03)
+
+
+### Bug Fixes
+
+* Add version to Lambda log context ([#12](https://github.com/cloud-scouts/terraform-aws-github-runner/issues/12)) ([15e7edb](https://github.com/cloud-scouts/terraform-aws-github-runner/commit/15e7edb0ebb1a59881203f5c12b14ba5e580e80e))
+
 ## [6.6.0](https://github.com/github-aws-runners/terraform-aws-github-runner/compare/v6.5.11...v6.6.0) (2025-07-01)
 
 
