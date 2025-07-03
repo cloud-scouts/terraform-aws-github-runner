@@ -1,7 +1,7 @@
 {
   "release-type": "node",
   "packages": {
-    ".": {
+    "lambdas": {
       "extra-files": [
         "lambdas/functions/ami-housekeeper/package-lock.json",
         "lambdas/functions/control-plane/package-lock.json",
