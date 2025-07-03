@@ -1,5 +1,5 @@
 {
-  "release-type": "generic",
+  "release-type": "simple",
   "packages": {
     ".": {
       "extra-files": [
