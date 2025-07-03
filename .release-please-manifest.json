@@ -1,7 +1,3 @@
 {
-  "packages/ami-housekeeper": "1.0.0",
-  "packages/control-plane": "1.0.0",
-  "packages/gh-agent-syncer": "1.0.0",
-  "packages/termination-watcher": "1.0.0",
-  "packages/webhook": "1.0.0"
+  ".": "6.6.0"
 }
