@@ -19,7 +19,7 @@ function getReleaseVersion(): string {
     const packageFilePath = path.resolve(__dirname, 'package.json');
     version = JSON.parse(fs.readFileSync(packageFilePath, 'utf-8')).version || 'unknown';
   } catch (error) {
-    logger.debug(`Failed to read package.json for version: ${error.message}`);
+    logger.debug(`Failed to read package.json for version: ${(error as Error)?.message ?? 'Unknown error'}`);
   }
   return version;
 }
