@@ -2,8 +2,11 @@ import { Logger } from '@aws-lambda-powertools/logger';
 import { Context } from 'aws-lambda';
 import * as fs from 'fs';
 import * as path from 'path';
+import { fileURLToPath } from 'url';
 
 const childLoggers: Logger[] = [];
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const defaultValues = {
   region: process.env.AWS_REGION,
@@ -11,12 +14,14 @@ const defaultValues = {
 };
 
 function getReleaseVersion(): string {
-  const packageFilePath = path.resolve(__dirname, 'package.json');
-  if (fs.existsSync(packageFilePath)) {
-    const packageData = fs.readFileSync(packageFilePath, 'utf-8');
-    return JSON.parse(packageData).version || 'unknown';
+  let version = 'unknown';
+  try {
+    const packageFilePath = path.resolve(__dirname, 'package.json');
+    version = JSON.parse(fs.readFileSync(packageFilePath, 'utf-8')).version || 'unknown';
+  } catch (error) {
+    logger.debug(`Failed to read package.json for version: ${error.message}`);
   }
-  return 'unknown';
+  return version;
 }
 
 function setContext(context: Context, module?: string) {
