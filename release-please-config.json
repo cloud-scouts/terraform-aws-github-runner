@@ -1,13 +1,28 @@
 {
-  "release-type": "node",
+  "release-type": "generic",
   "packages": {
-    "lambdas": {
+    ".": {
       "extra-files": [
-        "lambdas/functions/ami-housekeeper/package-lock.json",
-        "lambdas/functions/control-plane/package-lock.json",
-        "lambdas/functions/gh-agent-syncer/package-lock.json",
-        "lambdas/functions/termination-watcher/package-lock.json",
-        "lambdas/functions/webhook/package-lock.json"
+        {
+          "type": "json",
+          "path": "lambdas/functions/ami-housekeeper/package.json"
+        },
+        {
+          "type": "json",
+          "path": "lambdas/functions/control-plane/package.json"
+        },
+        {
+          "type": "json",
+          "path": "lambdas/functions/gh-agent-syncer/package.json"
+        },
+        {
+          "type": "json",
+          "path": "lambdas/functions/termination-watcher/package.json"
+        },
+        {
+          "type": "json",
+          "path": "lambdas/functions/webhook/package.json"
+        }
       ]
     }
   }
