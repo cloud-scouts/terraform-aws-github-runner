@@ -1,5 +1,12 @@
 # Changelog
 
+## [6.7.0](https://github.com/cloud-scouts/terraform-aws-github-runner/compare/v6.6.0...v6.7.0) (2025-07-04)
+
+
+### Features
+
+* Add release version to lambda conext for logging ([#14](https://github.com/cloud-scouts/terraform-aws-github-runner/issues/14)) ([4cc840b](https://github.com/cloud-scouts/terraform-aws-github-runner/commit/4cc840b4e8a6dabf8da9238aa4f3dc55478dda6b))
+
 ## [6.6.0](https://github.com/github-aws-runners/terraform-aws-github-runner/compare/v6.5.11...v6.6.0) (2025-07-01)
 
 
